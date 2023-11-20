@@ -29,7 +29,7 @@ jobs:
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: dotnet install ef
-        run: dotnet tool install --global dotnet-ef --version 5.0.13 --ignore-failed-sources
+        run: dotnet tool install --global dotnet-ef --version 7.*
 
       - name: dotnet bundle migration
         run: dotnet ef migrations bundle -p DotNetCoreSqlDb/DotNetCoreSqlDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate
