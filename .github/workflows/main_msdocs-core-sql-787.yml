@@ -32,7 +32,7 @@ jobs:
         run: dotnet tool install --global dotnet-ef --version 5.0.13 --ignore-failed-sources
 
       - name: dotnet bundle migration
-        run: dotnet ef migrations bundle --runtime linux-x64 -p DotNetCoreSqlDb/DotNetCoreSqlDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate
+        run: dotnet ef migrations bundle --runtime linux-x64 -p DotNetCoreSqlDb/DotNetCoreSqlDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate --ignore-failed-sources
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
